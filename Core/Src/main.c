@@ -124,7 +124,7 @@ int main(void)
 
   while (1)
   {
-    CCR = (((float)count / 18 + 2.5 ) / 100) * 2000;
+    CCR = (((float)count / 18 + 2.5 ) / 100) * 2000;//注意到角度是0-180 所以将其除18 得出数位于0-10 加2.5 等于的数为2.5-12.5 除一百恰好位于 2.5%-12.5% 所以满足输出比
     Pulsed = CCR/1000;
     Pulsef = CCR%1000;
     __HAL_TIM_SET_COMPARE (&htim1 , TIM_CHANNEL_4 , CCR  );
